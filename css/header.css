@@ -1,0 +1,21 @@
+.header {
+  margin: 30px 50px;
+  display: flex;
+}
+
+.svg-logo {
+  width: 25px;
+}
+
+ol {
+  display: flex;
+  gap: 10px;
+}
+
+ol > li {
+  list-style-type: none;
+}
+
+.signIn {
+  border-radius: 50px;
+}

@@ -24,7 +24,7 @@
   cursor: pointer;
 }
 
-.lupa[data-state="off"] {
+.lupa[data-state="on"] {
   display: none;
 }
 
