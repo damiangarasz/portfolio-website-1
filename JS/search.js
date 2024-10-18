@@ -19,24 +19,12 @@ export function searchToggle() {
 
   elArr.push(lupa, searchBarImput, search);
   lupa.addEventListener("click", function lupaClick(event) {
-    //loop który zamienia dataset na przeciwny
-    // for (let i = 0; i < elArr.length; i++) {
-    //   const temp = elArr[i].dataset.state;
-    //   if (temp == "off") {
-    //     elArr[i].dataset.state = "on";
-    //   } else if (temp == "on") {
-    //     elArr[i].dataset.state = "off";
-    //   } else {
-    //     new Error("co sie stanęło??");
-    //   }
-    // }
-
     elArr.forEach((el) => {
       el.dataset.state = "on";
     });
     event.stopPropagation();
   });
-
+  //podmiana dataset po kliknięciu poza lsearch box
   document.addEventListener("click", function clickOutside(event) {
     if (!elArr.some((el) => el.contains(event.target))) {
       elArr.forEach((el) => {
@@ -44,4 +32,15 @@ export function searchToggle() {
       });
     }
   });
+}
+
+//dynamimczna szerokość search bara
+export function szerokoscSrarchBara() {
+  const searchBarChwytak = document.querySelector(".search-bar-input");
+
+  setInterval(rozmiarOkna, 1000);
+  function rozmiarOkna() {
+    let rozmiar = window.innerWidth;
+    searchBarChwytak.style.width = rozmiar * 0.1 + "px";
+  }
 }

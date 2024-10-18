@@ -1,6 +1,13 @@
 .header {
   margin: 30px 50px;
   display: flex;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-search-singin {
+  display: flex;
 }
 
 .svg-logo {

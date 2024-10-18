@@ -1,6 +1,7 @@
-import { search, searchToggle } from "./JS/search.js";
+import { search, searchToggle, szerokoscSrarchBara } from "./JS/search.js";
 
 document.addEventListener("DOMContentLoaded", function onLoad() {
   search();
   searchToggle();
+  szerokoscSrarchBara();
 });
