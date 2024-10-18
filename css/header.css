@@ -6,8 +6,16 @@
   justify-content: space-between;
 }
 
+body {
+  background-color: #edebef;
+}
+
 .logo-search-singin {
   display: flex;
+  width: 120px;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 0;
 }
 
 .svg-logo {
@@ -25,4 +33,8 @@ ol > li {
 
 .signIn {
   border-radius: 50px;
+  background-color: #edebef;
+  border: 1px solid black;
+  padding: 0px 10px;
+  cursor: pointer;
 }

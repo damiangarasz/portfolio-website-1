@@ -34,13 +34,17 @@ export function searchToggle() {
   });
 }
 
-//dynamimczna szerokość search bara
+//dynamimczna szerokość search bara/wrappera i umieszczenie arrow buttona
 export function szerokoscSrarchBara() {
-  const searchBarChwytak = document.querySelector(".search-bar-input");
+  const searchBarChwytak = document.querySelector(".search-wrapper");
+  const searchBarButton = document.querySelector(".search-button");
 
   setInterval(rozmiarOkna, 1000);
   function rozmiarOkna() {
     let rozmiar = window.innerWidth;
-    searchBarChwytak.style.width = rozmiar * 0.1 + "px";
+    searchBarChwytak.style.width = rozmiar * 0.15 + "px";
+
+    let rozmiarBara = rozmiar * 0.15;
+    searchBarButton.style.left = rozmiarBara - 35 + "px";
   }
 }
