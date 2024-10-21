@@ -31,6 +31,7 @@ export function searchToggle() {
       elArr.forEach((el) => {
         el.dataset.state = "off";
       });
+      //na twardo ustawiam spowrotem poczatkowy rozmiar search bara
       const searchBarChwytak = document.querySelector(".search-wrapper");
       searchBarChwytak.style.width = "50px";
     }
@@ -40,14 +41,25 @@ export function searchToggle() {
 //dynamimczna szerokość search bara/wrappera i umieszczenie arrow buttona plus animacja otwierania
 
 const searchBarChwytak = document.querySelector(".search-wrapper");
-const szerokoscOkna = window.innerWidth;
+let szerokoscOkna = window.innerWidth;
 const szerokoscDocelowa = szerokoscOkna * 0.1;
+
+setInterval(sprAktualnegoRozmiaruOkna, 1100);
+
+function sprAktualnegoRozmiaruOkna() {
+  szerokoscOkna = window.innerWidth;
+  console.log(szerokoscOkna);
+}
 
 // searchBarChwytak.style.width = szerokoscOkna * 0.1 + "px";
 
 function smoothBarGrow() {
   let aktualnaSerokosc = 50;
+  //to linia, która wymusza przerysowanie elementu w przeglądarce.
+  //Oznacza to, że przeglądarka będzie musiała ponownie obliczyć styl elementu, zanim zacznie stosować jakiekolwiek inne zmiany stylu.
   searchBarChwytak.offsetWidth;
+
+  //metoda na możliwośc dodania wyłącznika setInterval
   let intervalID = setInterval(powiekszanieBara, 1);
 
   function powiekszanieBara() {
@@ -60,6 +72,9 @@ function smoothBarGrow() {
   function zatrzymanieIntervala() {
     if (szerokoscDocelowa <= aktualnaSerokosc) {
       clearInterval(intervalID);
+    } else {
+      //tutaj gdy zwiększe okno poinnno przeliczyć pasek jeszcze raz
+      powiekszanieBara();
     }
   }
 }
