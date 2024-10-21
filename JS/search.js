@@ -23,7 +23,7 @@ export function searchToggle() {
     });
 
     event.stopPropagation();
-    szerokoscSrarchBara();
+    smoothBarGrow();
   });
   //podmiana dataset po kliknięciu poza lsearch box
   document.addEventListener("click", function clickOutside(event) {
@@ -31,17 +31,35 @@ export function searchToggle() {
       elArr.forEach((el) => {
         el.dataset.state = "off";
       });
+      const searchBarChwytak = document.querySelector(".search-wrapper");
+      searchBarChwytak.style.width = "50px";
     }
   });
 }
 
 //dynamimczna szerokość search bara/wrappera i umieszczenie arrow buttona plus animacja otwierania
-function szerokoscSrarchBara() {
-  const searchBarChwytak = document.querySelector(".search-wrapper");
-  const searchBarButton = document.querySelector(".search-button");
-  const searchInput = document.querySelector(".search-bar-input");
-  const szerokoscOkna = window.innerWidth;
 
-  console.log("szerokoscOkna");
-  const szerokoscDocelowa = 1;
+const searchBarChwytak = document.querySelector(".search-wrapper");
+const szerokoscOkna = window.innerWidth;
+const szerokoscDocelowa = szerokoscOkna * 0.1;
+
+// searchBarChwytak.style.width = szerokoscOkna * 0.1 + "px";
+
+function smoothBarGrow() {
+  let aktualnaSerokosc = 50;
+  searchBarChwytak.offsetWidth;
+  let intervalID = setInterval(powiekszanieBara, 1);
+
+  function powiekszanieBara() {
+    searchBarChwytak.style.width = aktualnaSerokosc + "px";
+    aktualnaSerokosc++;
+  }
+
+  setInterval(zatrzymanieIntervala, 100);
+
+  function zatrzymanieIntervala() {
+    if (szerokoscDocelowa <= aktualnaSerokosc) {
+      clearInterval(intervalID);
+    }
+  }
 }
