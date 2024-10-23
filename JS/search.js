@@ -1,5 +1,5 @@
 // logika odpowiadająca za działanie search bara jeszcze nie gotowa
-//TODO
+//TODO dodać podpowiedzi i logikę wyszukiwania artykułów
 const form = document.querySelector(".search-bar");
 const searchBarChwytak = document.querySelector(".search-wrapper");
 let interval;
@@ -44,24 +44,44 @@ function smoothBarGrow() {
   //sprawdzanie szerokości okna podczas załadowania storny
   let aktualnaSzerokoscOkna = window.innerWidth;
   let poczatkowaSzerokoscSearchBara = 50;
-  let docelowaSzerokoscSearchBara = aktualnaSzerokoscOkna * 0.1;
+  let docelowaSzerokoscSearchBara = aktualnaSzerokoscOkna * 0.13;
   //loop sprawdzający szeokość okna co zadaną ilaść czasu
   interval = setInterval(sprAktualnejSzerokosciOkna, 500);
 
   function sprAktualnejSzerokosciOkna() {
     aktualnaSzerokoscOkna = window.innerWidth;
-    docelowaSzerokoscSearchBara = aktualnaSzerokoscOkna * 0.1;
-    console.log(docelowaSzerokoscSearchBara);
+    docelowaSzerokoscSearchBara = aktualnaSzerokoscOkna * 0.13;
+  }
+
+  //jeżeli window wykryje resize okna to uruchamia na nowo animację requestAnimationFrame(animacjaSearchBara);
+
+  window.addEventListener("resize", resizeFN);
+
+  function resizeFN() {
+    requestAnimationFrame(animacjaSearchBara);
   }
 
   requestAnimationFrame(animacjaSearchBara);
 
   function animacjaSearchBara() {
+    const tolerance = 5;
+    if (
+      Math.abs(poczatkowaSzerokoscSearchBara - docelowaSzerokoscSearchBara) <
+      tolerance
+    ) {
+      //jezeli Math.abs zwróci true to returnuje całą funkcję co zatrzymuje animacje
+      return;
+    }
+
     if (poczatkowaSzerokoscSearchBara < docelowaSzerokoscSearchBara) {
       searchBarChwytak.style.width = poczatkowaSzerokoscSearchBara + "px";
-      poczatkowaSzerokoscSearchBara += 4;
-    } else if (poczatkowaSzerokoscSearchBara >= docelowaSzerokoscSearchBara) {
+      //dodaje piksele do początkowej szerokości search bara
+      poczatkowaSzerokoscSearchBara += 5;
+    } else if (poczatkowaSzerokoscSearchBara > docelowaSzerokoscSearchBara) {
       cancelAnimationFrame(animacjaSearchBara);
+      searchBarChwytak.style.width = poczatkowaSzerokoscSearchBara + "px";
+      //dodaje piksele do początkowej szerokości search bara
+      poczatkowaSzerokoscSearchBara -= 5;
     }
 
     requestAnimationFrame(animacjaSearchBara);
