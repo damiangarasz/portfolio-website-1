@@ -1,6 +1,6 @@
-import { search, searchToggle } from "./JS/search.js";
+import { searchFN, searchToggle } from "./JS/search.js";
 
 document.addEventListener("DOMContentLoaded", function onLoad() {
-  search();
+  searchFN();
   searchToggle();
 });

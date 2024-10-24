@@ -3,7 +3,7 @@
 const form = document.querySelector(".search-bar");
 const searchBarChwytak = document.querySelector(".search-wrapper");
 let interval;
-export function search() {
+export function searchFN() {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -12,11 +12,11 @@ export function search() {
 }
 
 //podmiana dataset po kliknięciu w lupę
+const search = document.querySelector(".search-button");
 export function searchToggle() {
   const lupa = document.querySelector(".lupa");
   const elArr = [];
   const searchBarImput = document.querySelector(".search-bar-input");
-  const search = document.querySelector(".search-button");
 
   elArr.push(lupa, searchBarImput, search);
   lupa.addEventListener("click", function lupaClick(event) {
@@ -75,12 +75,15 @@ function smoothBarGrow() {
 
     if (poczatkowaSzerokoscSearchBara < docelowaSzerokoscSearchBara) {
       searchBarChwytak.style.width = poczatkowaSzerokoscSearchBara + "px";
+      //logika odpowiedzialna za odpowiednie ustawienie strzełki w searchbar
+      search.style.left = poczatkowaSzerokoscSearchBara - 35 + "px";
       //dodaje piksele do początkowej szerokości search bara
       poczatkowaSzerokoscSearchBara += 5;
     } else if (poczatkowaSzerokoscSearchBara > docelowaSzerokoscSearchBara) {
       cancelAnimationFrame(animacjaSearchBara);
       searchBarChwytak.style.width = poczatkowaSzerokoscSearchBara + "px";
       //dodaje piksele do początkowej szerokości search bara
+      search.style.left = poczatkowaSzerokoscSearchBara - 35 + "px";
       poczatkowaSzerokoscSearchBara -= 5;
     }
 
