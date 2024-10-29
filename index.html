@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer type="module" src="./main.js"></script>
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
     <title>Portfolio website 1</title>
   </head>
   <body>
@@ -34,9 +40,17 @@
         <div class="brand">Square Card</div>
       </div>
       <nav class="main-nav">
-        <ol>
+        <ol class="main-nav-menu">
           <li>•Home</li>
-          <li>•Learn</li>
+          <li class="learn">
+            •Learn<span class="carrot">⯆</span>
+            <ul class="drop-menu">
+              <li class="drop-lol">example</li>
+              <li class="drop-lol">example</li>
+              <li class="drop-lol">example</li>
+              <li class="drop-lol">example</li>
+            </ul>
+          </li>
           <li>•Help</li>
           <li>•Blog</li>
           <li>•About</li>

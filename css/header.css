@@ -1,13 +1,38 @@
 .header {
   margin: 30px 50px;
   display: flex;
-  border: 1px solid black;
   align-items: center;
   justify-content: space-between;
 }
 
 body {
   background-color: #edebef;
+}
+
+.main-nav {
+  font-weight: 500;
+}
+
+.main-nav-menu {
+  position: relative;
+}
+
+.main-nav-menu > li {
+  cursor: pointer;
+}
+
+.main-nav-menu > li:hover {
+  color: #b886fb;
+  transition: color 0.5s;
+}
+
+.drop-lol {
+  color: black;
+}
+
+.brand {
+  line-height: 1.5;
+  margin-left: 3px;
 }
 
 .logo-search-singin {
@@ -24,17 +49,35 @@ body {
 
 ol {
   display: flex;
-  gap: 10px;
+  gap: 40px;
 }
 
 ol > li {
   list-style-type: none;
 }
 
+.carrot {
+  font-size: 11px;
+}
+
+.drop-menu {
+  display: none;
+}
+
+.main-nav-menu > .learn:hover .drop-menu {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  position: absolute;
+  list-style-type: none;
+  left: 85px;
+  top: 20px;
+}
+
 .signIn {
   border-radius: 50px;
   background-color: #edebef;
   border: 1px solid black;
-  padding: 0px 10px;
+  padding: 6px 10px;
   cursor: pointer;
 }
