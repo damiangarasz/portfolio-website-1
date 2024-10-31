@@ -110,6 +110,14 @@
   .grid-first-image-1 {
     order: 1;
   }
+
+  .title {
+    font-size: 35px;
+  }
+
+  .header {
+    
+  }
 }
 
 /* pierwszy rząd KONIEC */
