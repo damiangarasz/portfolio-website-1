@@ -119,4 +119,71 @@
 /* pierwszy rząd KONIEC */
 
 /* drugi rząd POCZĄTEK */
+
+.second-row {
+  border-radius: 30px;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "title title paragraph paragraph"
+    "w-1 w-2 w-3 w-4";
+}
+
+h2 {
+  font-weight: 100;
+  font-size: 35px;
+}
+
+.second-row-paragraph {
+  line-height: 1.7;
+  font-size: 15px;
+  color: grey;
+}
+
+.second-row-paragraph-button {
+  color: #ffffff;
+  border-radius: 25px;
+  border: 1px solid black;
+  padding: 7px 50px 7px 10px;
+  background-color: #000000;
+}
+
+.right-arrow-2 {
+  height: 13px;
+  position: absolute;
+  top: 6px;
+  left: 115px;
+}
+
+.button-wrapper {
+  position: relative;
+}
+
+.second-row-title {
+  grid-area: title;
+}
+
+.second-row-paragraph {
+  grid-area: paragraph;
+}
+
+.second-row-paragraph-w-1 {
+  grid-area: w-1;
+}
+
+.second-row-paragraph-w-2 {
+  grid-area: w-2;
+}
+
+.second-row-paragraph-w-3 {
+  grid-area: w-3;
+}
+
+.second-row-paragraph-w-4 {
+  grid-area: w-4;
+}
 /* drugi rząd KONIEC */
