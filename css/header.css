@@ -108,15 +108,37 @@ ol > li {
 }
 
 @media (max-width: 650px) {
+  .header {
+    display: flex;
+  }
+
   .main-nav-menu {
     display: flex;
     flex-direction: column;
     position: absolute;
+    left: -200px;
+    top: 0;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: visible;
+    transition: left 0.3s ease, box-shadow 0.3s ease;
+    z-index: 999;
+  }
+
+  .logo {
+    order: 1;
   }
 
   .hamburger-toggle {
     display: block;
+    order: 0;
+  }
+
+  .logo-search-singin {
+    order: 2;
   }
 }
 
 /* TODO hamburger button */
+https://heyoka.medium.com/responsive-pure-css-off-canvas-hamburger-menu-aebc8d11d793
+  Step 4;

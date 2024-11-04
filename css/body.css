@@ -138,7 +138,12 @@ h2 {
   font-size: 35px;
 }
 
+.second-row-title {
+  margin: 0 20px;
+}
+
 .second-row-paragraph {
+  padding: 10px;
   line-height: 1.7;
   font-size: 15px;
   color: grey;
@@ -173,17 +178,78 @@ h2 {
 
 .second-row-paragraph-w-1 {
   grid-area: w-1;
+  border-radius: 20px;
+  transition: background-color 1s ease;
+  padding: 20px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.second-row-paragraph-w-1:hover {
+  background-color: #edebef;
+  cursor: pointer;
 }
 
 .second-row-paragraph-w-2 {
   grid-area: w-2;
+  border-radius: 20px;
+  transition: background-color 1s ease;
+  padding: 20px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.second-row-paragraph-w-2:hover {
+  background-color: #edebef;
+  cursor: pointer;
 }
 
 .second-row-paragraph-w-3 {
   grid-area: w-3;
+  border-radius: 20px;
+  transition: background-color 1s ease;
+  padding: 20px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.second-row-paragraph-w-3:hover {
+  background-color: #edebef;
+  cursor: pointer;
 }
 
 .second-row-paragraph-w-4 {
   grid-area: w-4;
+  border-radius: 20px;
+  transition: background-color 1s ease;
+  padding: 20px;
+  margin-top: 50px;
+  text-align: center;
 }
+
+.second-row-paragraph-w-4:hover {
+  background-color: #edebef;
+  cursor: pointer;
+}
+
+.second-row-img-chwytak {
+  width: 20px;
+}
+
+.second-row-img-1 {
+  width: 120px;
+}
+
+.second-row-img-2 {
+  width: 130px;
+}
+
+.second-row-img-3 {
+  width: 100px;
+}
+
+.second-row-img-4 {
+  width: 90px;
+}
+
 /* drugi rząd KONIEC */
