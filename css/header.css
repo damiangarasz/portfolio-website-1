@@ -137,8 +137,30 @@ ol > li {
   .logo-search-singin {
     order: 2;
   }
+
+  .main-nav:target {
+    left: 0;
+    outline: none;
+    box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25);
+  }
+
+  .main-nav:target .x-toggle {
+    display: block;
+    z-index: 1001;
+  }
+
+  .main-nav:target + .backdrop {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    background: #000;
+    background: rgba(0, 0, 0, 0.85);
+    cursor: default;
+  }
 }
 
 /* TODO hamburger button */
-https://heyoka.medium.com/responsive-pure-css-off-canvas-hamburger-menu-aebc8d11d793
-  Step 4;
