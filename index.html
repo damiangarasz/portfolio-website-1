@@ -4,12 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer type="module" src="./main.js"></script>
+    <script src="./sw-registration.js"></script>
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
       rel="stylesheet"
+    />
+    <link rel="manifest" href="app.webmanifest" />
+    <link rel="apple-touch-icon" href="./img/icon-web.png" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1, viewport-fit=cover"
     />
     <title>Portfolio website 1</title>
   </head>
@@ -43,12 +50,7 @@
         </svg>
         <span class="brand">Square Card</span>
       </div>
-      <a
-        class="hamburger-toggle"
-        href="#main-nav"
-        id="main-menu-toggle"
-        aria-label="open main menu"
-      >
+      <div class="hamburger" data-state="on">
         <svg
           aria-hidden="true"
           fill="#000000"
@@ -70,13 +72,8 @@
             ></path>
           </g>
         </svg>
-      </a>
-      <a
-        class="x-toggle"
-        href="#main-menu-toggle"
-        id="main-menu-close"
-        aria-label="close main menu"
-      >
+      </div>
+      <div class="x-toggle" data-state="off">
         <svg
           aria-hidden="true"
           width="64px"
@@ -119,7 +116,7 @@
             </g>
           </g>
         </svg>
-      </a>
+      </div>
       <nav
         id="main-nav"
         class="main-nav"

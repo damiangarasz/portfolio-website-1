@@ -1,0 +1,17 @@
+{
+  "name": "portfolio",
+  "short_name": "PF",
+  "start_url": "./",
+  "orientarion": "portrait",
+  "theme_color": "#edebef",
+  "scope": "./",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "./img/icon-web.png",
+      "sizes": "512x512",
+      "type": "image/jpg",
+      "purpose": "maskable"
+    }
+  ]
+}
